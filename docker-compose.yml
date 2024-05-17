@@ -1,0 +1,13 @@
+version: '3'
+services:
+  airflow:
+    image: apache/airflow:latest
+    container_name: airflow
+    ports:
+      - "8080:8080"
+    volumes:
+      - C:/Users/fmart/OneDrive/Escritorio/DevOps/Airflow/dags:/usr/local/airflow/dags
+    environment:
+      - LOAD_EX=n
+      - EXECUTOR=LocalExecutor
+    command: standalone
